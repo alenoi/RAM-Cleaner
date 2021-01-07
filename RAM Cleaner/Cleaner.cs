@@ -209,7 +209,8 @@ namespace RAM_Cleaner
                 Tfill.Start();
                 Tfill.Join();
             }
-
+            CleanInfo();
+            Console.Clear();
         }
 
         private static ConsoleKey waitforkeypress()
