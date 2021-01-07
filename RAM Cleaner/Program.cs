@@ -19,7 +19,7 @@ namespace RAM_Cleaner
 
             while (cleaner.State != "end")
             {
-                Thread.Sleep(1000);
+                Thread.Sleep(10);
             }
 
             ConsoleKey key = waitforkeypress();

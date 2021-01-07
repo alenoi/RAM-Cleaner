@@ -146,7 +146,6 @@ namespace RAM_Cleaner
                         Console.WriteLine(displayGet("ramtable"));
                         Console.SetCursorPosition(0, 10);
                         Console.WriteLine(displayGet("cleanend"));
-                        Thread.Sleep(1000);
                         break;
                 }
 
@@ -209,7 +208,9 @@ namespace RAM_Cleaner
                 Tfill.Start();
                 Tfill.Join();
             }
-
+            CleanInfo();
+            Thread.Sleep(1000);
+            Console.Clear();
         }
 
         private static ConsoleKey waitforkeypress()
@@ -229,7 +230,6 @@ namespace RAM_Cleaner
         public void Fill()
         {
             state = "clean";
-            GC.Collect();
             Console.Clear();
             startphav = phav;
             for (i = 0; i <= barlenght; i++)
@@ -241,9 +241,9 @@ namespace RAM_Cleaner
                 else
                 { Thread.Sleep(wait); }
             }
-            state = "end";
             enddate = DateTime.Now;
             Clear();
+            state = "end";
         }
         public void Clear()
         {
